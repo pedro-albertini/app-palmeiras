@@ -1,6 +1,6 @@
 def quiz(resposta):
 
     if "palmeiras" in resposta:
-        return "certo"
+        return "palmeiras"
     else:
-        return "Errou, é o palmeiras"
+        return "errado"

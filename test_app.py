@@ -1,4 +1,4 @@
 from app import quiz
 
 def test_quiz():
-    assert quiz() == "palmeiras"
+    assert quiz(reposta) == "palmeiras"

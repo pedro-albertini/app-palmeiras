@@ -1,4 +1,4 @@
-def quiz(reposta):
+def quiz(resposta):
 
     if "palmeiras" in resposta:
         return "palmeiras"

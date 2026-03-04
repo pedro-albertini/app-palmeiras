@@ -1,4 +1,4 @@
-name: PIPELINE
+name: PIPELINE1
 
 on:
   push:

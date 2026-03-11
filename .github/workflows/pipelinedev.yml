@@ -1,12 +1,9 @@
-name: PIPELINE1
+name: Pipeline dev
 
 on:
   push:
     branches:
-      - main
-  pull-request:
-    branches:
-      - main
+      - dev
 
 jobs:
 
@@ -36,4 +33,4 @@ jobs:
 
     steps:
       - name: Simular deploy
-        run: echo "Deploy feito com sucesso em produção"
+        run: echo "Deploy feito no dev"

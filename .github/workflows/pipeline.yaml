@@ -28,6 +28,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
+      - name: Gerar artefato ZIP
+        run: zip -r pipeline-demo.zip .
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-buildado
+          path: pipeline-demo.zip
+
       - name: Teste
         run: pytest
   
@@ -38,5 +47,14 @@ jobs:
       name: production
 
     steps:
+
+      - name: Baixar artefato
+        uses: actions/dowload-artifact@v4
+        with:
+          name: codigo buildado
+      
+      - name: Extrair artefato
+        run: unzip pipeline-demo.zip
+
       - name: Simular deploy
         run: echo "Deploy feito com sucesso em produção"

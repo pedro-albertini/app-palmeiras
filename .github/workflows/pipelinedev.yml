@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@
+        uses: actions/checkout@v4
       
       - name: Instalar o Pylint
         run: |

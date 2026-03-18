@@ -7,13 +7,22 @@ on:
 
 
 jobs:
- 
+  
   deploy:
     runs-on: ubuntu-latest
     environment:
       name: production
 
     steps:
+
+      - name: Gerar artefato ZIP
+        run: zip -r pipeline-demo.zip .
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-buildado
+          path: pipeline-demo.zip
 
       - name: Baixar artefato
         uses: actions/download-artifact@v4

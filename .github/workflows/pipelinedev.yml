@@ -11,6 +11,16 @@ on:
 
 jobs:
 
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Rodar lint
+        run: python -m pylint --disable=C0114,C0116 test_app.py
+
   build:
     runs-on: ubuntu-latest
 

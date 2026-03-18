@@ -18,13 +18,15 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
       
-      - name: Instalar o Pylint
+      - name: Instalar o dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install pylint
+          pip install -r requirements.txt
 
       - name: Rodar lint
         run: python -m pylint --disable=C0114,C0116 test_app.py
+
+      - name: 
 
   build:
     runs-on: ubuntu-latest

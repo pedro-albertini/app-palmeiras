@@ -26,7 +26,10 @@ jobs:
       - name: Rodar lint
         run: python -m pylint --disable=C0114,C0116 test_app.py
 
-      - name: 
+      - name: Rodar corevage
+        run: |
+          python -m coverage run -m pytest test_app.py
+          python -m coverage report
 
   build:
     runs-on: ubuntu-latest

@@ -1,5 +1,5 @@
 def quiz(resposta):
-    if "flamengo" in resposta.lower():
+    if "palmeiras" in resposta.lower():
         return "certo"
     else:
         return "errado"

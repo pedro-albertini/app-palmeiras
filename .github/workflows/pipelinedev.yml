@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-
+      
   pull_request:
     branches:
       - main
@@ -28,5 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
+      - name: Gerar artefato ZIP
+        run: zip -r pipeline-demo.zip .
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-buildado
+          path: pipeline-demo.zip
+
       - name: Teste
         run: pytest

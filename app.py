@@ -1,5 +1,5 @@
 def quiz(resposta):
-    SENHA = 1234
+    pass = 123
     if "palmeiras" in resposta.lower():
         return "certo"
     else:

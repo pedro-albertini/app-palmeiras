@@ -1,5 +1,5 @@
 def quiz(resposta):
-    API_KEY = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
+    password = "MySuperSecretPassword123!"
     if "palmeiras" in resposta.lower():
         return "certo"
     else:

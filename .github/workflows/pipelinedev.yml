@@ -20,15 +20,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      
+
       - name: Análise com SonarCloud
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
             -Dsonar.projectKey=pedro-albertini_app-palmeiras
-            -Dsonar.organization=pedro-albertini
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            -Dsonar.organization=pedro-albertini  
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Rodar lint
         run: python -m pylint --fail-under=9.0 --disable=C0114,C0116 test_app.py

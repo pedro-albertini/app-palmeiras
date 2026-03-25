@@ -28,7 +28,7 @@ jobs:
             -Dsonar.projectKey=pedro-albertini_app-palmeiras
             -Dsonar.organization=pedro-albertini  
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: 123
 
       - name: Rodar lint
         run: python -m pylint --fail-under=9.0 --disable=C0114,C0116 test_app.py

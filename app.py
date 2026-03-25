@@ -1,5 +1,5 @@
 def quiz(resposta):
-    SENMHA = 123
+    API_KEY = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
     if "palmeiras" in resposta.lower():
         return "certo"
     else:

@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Scan for secrets
-        uses: gitleaks/gitleaks-actions@v2
+        uses: gitleaks/gitleaks-action@v2
 
   build:
     runs-on: ubuntu-latest

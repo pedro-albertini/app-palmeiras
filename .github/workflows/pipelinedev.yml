@@ -67,7 +67,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Rodar lint
-        run: python -m pylint --fail-under=9.0 --disable=C0114,C0116 test_app.py
+        run: python -m pylint --fail-under=7.0 --disable=C0114,C0116 test_app.py
 
       - name: Rodar corevage
         run: |

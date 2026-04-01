@@ -5,4 +5,3 @@ def test_quiz_certo():
 
 def test_quiz_errado():
     assert quiz("flamengo") == "errado"
-    

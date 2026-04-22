@@ -166,4 +166,11 @@ jobs:
       - name: Rodar testes dentro do Container
         run: docker run alberttini3/pipeline-ci:latest pytest
 
+      
+      - name: Valida comunicação (Ping)
+        run: docker compose exec -T app-palmeiras ping -c 1 servico-vizinho
+
+      - name: Rodar testes unitarios ()
+        run: docker compose exec -T app-palmeiras npm teste
+
     

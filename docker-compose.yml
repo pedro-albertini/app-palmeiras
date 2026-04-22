@@ -1,7 +1,7 @@
 services:
   app-palmeiras:
     build: .
-    image: alberttini/app-palmeiras:latest
+    image: alberttini3/app-palmeiras:latest
 
   servico-vizinho:
     image: alpine

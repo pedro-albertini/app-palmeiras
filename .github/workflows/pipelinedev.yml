@@ -157,20 +157,26 @@ jobs:
     #     run: pytest
 
     steps:
-      - name: Login no Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASS }}
 
-      - name: Rodar testes dentro do Container
-        run: docker run alberttini3/pipeline-ci:latest pytest
+      - name: Checkout do código
+        uses: actions/checkout@v3
 
+      # - name: Login no Docker Hub
+      #   uses: docker/login-action@v3
+      #   with:
+      #     username: ${{ secrets.DOCKER_USER }}
+      #     password: ${{ secrets.DOCKER_PASS }}
+
+      # - name: Rodar testes dentro do Container
+      #   run: docker run alberttini3/pipeline-ci:latest pytest
+
+      - name: Subir ambiente de teste
+        run: docker compose up -d
       
       - name: Valida comunicação (Ping)
-        run: docker compose exec -T app-palmeiras ping -c 1 servico-vizinho
+        run: docker compose run -T app-palmeiras ping -c 1 servico-vizinho
 
       - name: Rodar testes unitarios ()
-        run: docker compose exec -T app-palmeiras npm teste
+        run: docker compose run -T app-palmeiras pytest
 
     

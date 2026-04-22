@@ -107,12 +107,18 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
 
-      - name: Build e Push da Imagem
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: alberttini3/pipeline-ci:latest
+      # - name: Build e Push da Imagem
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     push: true
+      #     tags: alberttini3/pipeline-ci:latest
+
+      - name: Build com Docker Compose
+        run: docker compose build
+
+      - name: Push com Docker Compose
+        run: docker compose push
 
   test:
 

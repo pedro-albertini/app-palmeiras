@@ -1,0 +1,8 @@
+services:
+  app-palmeiras:
+    build: .
+    image: alberttini/app-palmeiras:latest
+
+  servico-vizinho:
+    image: alpine
+    command: sleep infinity
